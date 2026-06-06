@@ -1,6 +1,6 @@
 import { useLanguage } from '../context/LanguageContext'
 import ContactForm from '../components/ContactForm'
-import { FACEBOOK_PAGE_URL, facebookEmbed, teamPhotos } from '../data/site'
+import { FACEBOOK_PAGE_URL, teamPhotos } from '../data/site'
 
 export default function About() {
   const { t, lang } = useLanguage()
@@ -28,45 +28,25 @@ export default function About() {
 
         <div>
           <h2 className="font-display mb-4 text-lg font-bold text-white">{t.about.teamPhotos}</h2>
-          <div className="grid grid-cols-2 gap-3">
-            {teamPhotos.map((photo, i) => (
-              <div
-                key={photo.src}
-                className={`card-glow overflow-hidden rounded-xl ${i === 0 ? 'col-span-2' : ''}`}
-              >
-                <img
-                  src={photo.src}
-                  alt={lang === 'he' ? photo.altHe : photo.alt}
-                  referrerPolicy="no-referrer"
-                  className={`w-full object-cover ${i === 0 ? 'h-44 sm:h-52' : 'h-32 sm:h-36'}`}
-                  loading="lazy"
-                />
-              </div>
-            ))}
+          <div className="card-glow mb-4 overflow-hidden rounded-xl">
+            <img
+              src={teamPhotos[0].src}
+              alt={lang === 'he' ? teamPhotos[0].altHe : teamPhotos[0].alt}
+              referrerPolicy="no-referrer"
+              className="h-44 w-full object-cover sm:h-52"
+              loading="lazy"
+            />
           </div>
-          <div className="card-glow mt-4 overflow-hidden rounded-xl">
+          <div className="card-glow overflow-hidden rounded-xl">
             <iframe
-              src={facebookEmbed('photos', 400)}
+              src={`https://www.facebook.com/plugins/page.php?href=${encodeURIComponent(FACEBOOK_PAGE_URL)}&tabs=photos&width=500&height=480&small_header=true&adapt_container_width=true&hide_cover=true&show_facepile=false&appId`}
               width="100%"
-              height="400"
+              height="480"
               style={{ border: 'none', overflow: 'hidden' }}
               scrolling="no"
               frameBorder="0"
               allowFullScreen
               title="Team Krono Facebook Photos"
-              className="w-full"
-            />
-          </div>
-          <div className="card-glow mt-4 overflow-hidden rounded-xl">
-            <iframe
-              src={facebookEmbed('videos', 320)}
-              width="100%"
-              height="320"
-              style={{ border: 'none', overflow: 'hidden' }}
-              scrolling="no"
-              frameBorder="0"
-              allowFullScreen
-              title="Team Krono Facebook Videos"
               className="w-full"
             />
           </div>

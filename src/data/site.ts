@@ -60,11 +60,7 @@ export const CHAMPIONSHIP_DATE = '2026-06-28T09:00:00.000Z'
 export const CONTACT_EMAIL = 'krono10935@gmail.com'
 
 export const FACEBOOK_PAGE_URL =
-  'https://www.facebook.com/people/Team-Krono-FRC-10935/61577963204710/'
-
-export function facebookEmbed(tabs: string, height = 500) {
-  return `https://www.facebook.com/plugins/page.php?href=${encodeURIComponent(FACEBOOK_PAGE_URL)}&tabs=${tabs}&width=500&height=${height}&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId`
-}
+  'https://www.facebook.com/p/Team-Krono-FRC-10935-61577963204710/'
 
 export const GAME_MANUAL_URL =
   'https://www.firstinspires.org/resources/library/frc/season-materials'
@@ -82,15 +78,5 @@ export const teamPhotos: TeamPhoto[] = [
     src: `${import.meta.env.BASE_URL}team/team-1.jpg`,
     alt: 'Team Krono',
     altHe: 'קבוצת Krono',
-  },
-  {
-    src: `${import.meta.env.BASE_URL}team/team-2.jpg`,
-    alt: 'Team Krono FRC 10935',
-    altHe: 'Krono FRC 10935',
-  },
-  {
-    src: `${import.meta.env.BASE_URL}team/team-3.jpg`,
-    alt: 'Team Krono from Facebook',
-    altHe: 'קבוצת Krono מפייסבוק',
   },
 ]
