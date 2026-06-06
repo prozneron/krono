@@ -66,3 +66,27 @@ export const GAME_MANUAL_URL =
   'https://www.firstinspires.org/resources/library/frc/season-materials'
 
 export const GAME_ANIMATION_URL = 'https://www.youtube.com/watch?v=_fybREErgyM'
+
+export interface TeamPhoto {
+  src: string
+  alt: string
+  altHe: string
+}
+
+export const teamPhotos: TeamPhoto[] = [
+  {
+    src: `${import.meta.env.BASE_URL}team/team-1.jpg`,
+    alt: 'Team Krono at competition',
+    altHe: 'קבוצת Krono בתחרות',
+  },
+  {
+    src: `${import.meta.env.BASE_URL}team/team-2.jpg`,
+    alt: 'Team Krono building the robot',
+    altHe: 'קבוצת Krono בונה את הרובוט',
+  },
+  {
+    src: `${import.meta.env.BASE_URL}team/team-3.jpg`,
+    alt: 'Team Krono at a community event',
+    altHe: 'קבוצת Krono באירוע קהילתי',
+  },
+]
