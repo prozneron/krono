@@ -1,13 +1,13 @@
 import { copyFileSync, mkdirSync } from 'node:fs'
 
-const routes = ['', 'about', 'first', 'sponsors', 'challenge']
+const routes = ['about', 'first', 'sponsors', 'challenge']
+
+copyFileSync('dist/index.html', 'dist/404.html')
+console.log('Copied dist/index.html -> dist/404.html')
 
 for (const route of routes) {
-  if (route === '') {
-    copyFileSync('dist/index.html', 'dist/404.html')
-    console.log('Copied dist/index.html -> dist/404.html')
-    continue
-  }
+  copyFileSync('dist/index.html', `dist/${route}.html`)
+  console.log(`Copied dist/index.html -> dist/${route}.html`)
 
   const dir = `dist/${route}`
   mkdirSync(dir, { recursive: true })
