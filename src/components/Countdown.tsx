@@ -10,28 +10,46 @@ interface TimeLeft {
   hours: number
   minutes: number
   seconds: number
+  elapsed: boolean
 }
 
 function calcTimeLeft(target: Date): TimeLeft {
   const diff = target.getTime() - Date.now()
-  if (diff <= 0) return { days: 0, hours: 0, minutes: 0, seconds: 0 }
+  if (Number.isNaN(diff) || diff <= 0) {
+    return { days: 0, hours: 0, minutes: 0, seconds: 0, elapsed: true }
+  }
   return {
     days: Math.floor(diff / (1000 * 60 * 60 * 24)),
     hours: Math.floor((diff / (1000 * 60 * 60)) % 24),
     minutes: Math.floor((diff / (1000 * 60)) % 60),
     seconds: Math.floor((diff / 1000) % 60),
+    elapsed: false,
   }
 }
 
 export default function Countdown({ targetDate }: CountdownProps) {
   const { t } = useLanguage()
-  const target = new Date(targetDate)
-  const [timeLeft, setTimeLeft] = useState<TimeLeft>(() => calcTimeLeft(target))
+  const [timeLeft, setTimeLeft] = useState<TimeLeft>(() =>
+    calcTimeLeft(new Date(targetDate)),
+  )
 
   useEffect(() => {
+    const target = new Date(targetDate)
+    setTimeLeft(calcTimeLeft(target))
     const timer = setInterval(() => setTimeLeft(calcTimeLeft(target)), 1000)
     return () => clearInterval(timer)
   }, [targetDate])
+
+  if (timeLeft.elapsed) {
+    return (
+      <div className="card-glow rounded-xl bg-krono-card p-8 text-center">
+        <p className="font-display text-2xl font-bold text-krono-red-glow sm:text-3xl">
+          {t.challenge.eventStarted}
+        </p>
+        <p className="mt-3 text-sm text-krono-muted">{t.challenge.eventStartedSub}</p>
+      </div>
+    )
+  }
 
   const units = [
     { value: timeLeft.days, label: t.challenge.days },

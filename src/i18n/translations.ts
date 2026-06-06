@@ -64,6 +64,8 @@ export interface Translations {
     download: string
     noFile: string
     watchAnimation: string
+    eventStarted: string
+    eventStartedSub: string
   }
   sponsors: {
     title: string
@@ -134,7 +136,7 @@ export const en: Translations = {
     gameName: 'REBUILT™ presented by Haas',
     gameDesc:
       'The 2026 FIRST Robotics Competition game REBUILT challenges alliances to score by manipulating game pieces on a dynamic field. Teams must strategize across autonomous and teleoperated periods, working together to rebuild and dominate the competition.',
-    countdown: 'Countdown to FIRST Championship 2026',
+    countdown: 'Countdown to January 28, 2027',
     days: 'Days',
     hours: 'Hours',
     minutes: 'Minutes',
@@ -146,6 +148,8 @@ export const en: Translations = {
     download: 'Download Manual',
     noFile: 'No file uploaded yet',
     watchAnimation: 'Watch Game Animation',
+    eventStarted: 'Competition day is here!',
+    eventStartedSub: 'Good luck to all teams competing today.',
   },
   sponsors: {
     title: 'Our Sponsors',
@@ -216,7 +220,7 @@ export const he: Translations = {
     gameName: 'REBUILT™ presented by Haas',
     gameDesc:
       'משחק FIRST Robotics 2026 REBUILT מאתגר בריתות לצבור נקודות על ידי מנipulation של חלקי משחק על מגרש דינמי. הקבוצות חייבות לתכנן אסטרטגיה בתקופות אוטונומיות וטל-אופ, ולעבוד יחד כדי לנצח בתחרות.',
-    countdown: 'ספירה לאחור ל-FIRST Championship 2026',
+    countdown: 'ספירה לאחור ל-28 בינואר 2027',
     days: 'ימים',
     hours: 'שעות',
     minutes: 'דקות',
@@ -228,6 +232,8 @@ export const he: Translations = {
     download: 'הורדת ספר משחק',
     noFile: 'טרם הועלה קובץ',
     watchAnimation: 'צפייה באנימציית המשחק',
+    eventStarted: 'יום התחרות הגיע!',
+    eventStartedSub: 'בהצלחה לכל הקבוצות המתחרות היום.',
   },
   sponsors: {
     title: 'נותני החסות שלנו',
