@@ -54,8 +54,8 @@ export const sponsors: Sponsor[] = [
   },
 ]
 
-// January 28 — 12:00 Israel time (UTC+2). Update year when the next competition is scheduled.
-export const CHAMPIONSHIP_DATE = '2027-01-28T10:00:00.000Z'
+// June 28 — 12:00 Israel time (UTC+3). Update year when the next competition is scheduled.
+export const CHAMPIONSHIP_DATE = '2026-06-28T09:00:00.000Z'
 
 export const CONTACT_EMAIL = 'krono10935@gmail.com'
 

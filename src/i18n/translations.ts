@@ -136,7 +136,7 @@ export const en: Translations = {
     gameName: 'REBUILT™ presented by Haas',
     gameDesc:
       'The 2026 FIRST Robotics Competition game REBUILT challenges alliances to score by manipulating game pieces on a dynamic field. Teams must strategize across autonomous and teleoperated periods, working together to rebuild and dominate the competition.',
-    countdown: 'Countdown to January 28, 2027',
+    countdown: 'Countdown to June 28, 2026',
     days: 'Days',
     hours: 'Hours',
     minutes: 'Minutes',
@@ -220,7 +220,7 @@ export const he: Translations = {
     gameName: 'REBUILT™ presented by Haas',
     gameDesc:
       'משחק FIRST Robotics 2026 REBUILT מאתגר בריתות לצבור נקודות על ידי מנipulation של חלקי משחק על מגרש דינמי. הקבוצות חייבות לתכנן אסטרטגיה בתקופות אוטונומיות וטל-אופ, ולעבוד יחד כדי לנצח בתחרות.',
-    countdown: 'ספירה לאחור ל-28 בינואר 2027',
+    countdown: 'ספירה לאחור ל-28 ביוני 2026',
     days: 'ימים',
     hours: 'שעות',
     minutes: 'דקות',
