@@ -54,7 +54,7 @@ export const sponsors: Sponsor[] = [
   },
 ]
 
-export const CHAMPIONSHIP_DATE = '2026-04-29T16:00:00+03:00'
+export const CHAMPIONSHIP_DATE = '2026-01-28T12:00:00+02:00'
 
 export const CONTACT_EMAIL = 'krono10935@gmail.com'
 
