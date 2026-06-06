@@ -20,7 +20,7 @@ function SponsorLogo({ name, logo }: { name: string; logo?: string }) {
   if (!logo) return <SponsorInitials name={name} />
 
   return (
-    <div className="flex h-24 w-full items-center justify-center rounded-lg bg-white/5 p-4">
+    <div className="flex h-24 w-full items-center justify-center rounded-lg bg-white p-4">
       <img
         src={logo}
         alt={name}

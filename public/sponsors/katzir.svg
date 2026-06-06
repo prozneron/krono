@@ -1,5 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
-  <path d="M50 15 L15 35 V65 L50 85 L85 65 V35 Z" stroke="#e8e8e8" stroke-width="2" fill="none"/>
-  <path d="M50 15 V85 M15 35 L85 65 M85 35 L15 65" stroke="#c41e3a" stroke-width="1.5" opacity="0.6"/>
-  <text x="50" y="54" text-anchor="middle" fill="#e8e8e8" font-family="Arial, sans-serif" font-size="14" font-weight="bold">חזÙט</text>
-</svg>
