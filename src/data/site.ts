@@ -118,3 +118,37 @@ export const teamVideos: TeamMedia[] = [
     altHe: 'סרטון קבוצת Krono מפייסבוק',
   },
 ]
+
+export interface FacebookPost {
+  type: 'photo' | 'video'
+  src: string
+  caption: string
+  captionHe: string
+}
+
+export const facebookPosts: FacebookPost[] = [
+  {
+    type: 'photo',
+    src: `${import.meta.env.BASE_URL}team/photo-1.jpg`,
+    caption: 'Team Krono out in the community — inspiring the next generation of engineers! 🤖',
+    captionHe: 'קבוצת Krono בקהילה — מעוררים השראה בדור המהנדסים הבא! 🤖',
+  },
+  {
+    type: 'video',
+    src: `${import.meta.env.BASE_URL}team/video-1.mp4`,
+    caption: 'Check out our latest video from the season!',
+    captionHe: 'צפו בסרטון האחרון שלנו מהעונה!',
+  },
+  {
+    type: 'photo',
+    src: `${import.meta.env.BASE_URL}team/photo-3.jpg`,
+    caption: 'Building, coding, and competing — this is Krono. #FRC10935',
+    captionHe: 'בונים, מתכנתים ומתחרים — זה Krono. #FRC10935',
+  },
+  {
+    type: 'photo',
+    src: `${import.meta.env.BASE_URL}team/photo-4.jpg`,
+    caption: '#1 Rookie Team in the World 2025. The journey continues!',
+    captionHe: 'קבוצת Rookie מס\' 1 בעולם 2025. המסע ממשיך!',
+  },
+]

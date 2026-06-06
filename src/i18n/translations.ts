@@ -25,6 +25,11 @@ export interface Translations {
     facebookFeed: string
     facebookPreview: string
     facebookCta: string
+    facebookFollow: string
+    facebookLike: string
+    facebookComment: string
+    facebookShare: string
+    facebookPageSubtitle: string
   }
   about: {
     title: string
@@ -107,6 +112,11 @@ export const en: Translations = {
     facebookFeed: 'Latest from Facebook',
     facebookPreview: 'Photos, videos, and updates from competitions and outreach events.',
     facebookCta: 'Open Facebook Page',
+    facebookFollow: 'Follow',
+    facebookLike: 'Like',
+    facebookComment: 'Comment',
+    facebookShare: 'Share',
+    facebookPageSubtitle: 'Robotics Team · Kiryat Ono, Israel',
   },
   about: {
     title: 'About Us',
@@ -198,6 +208,11 @@ export const he: Translations = {
     facebookFeed: 'עדכונים מפייסבוק',
     facebookPreview: 'תמונות, סרטונים ועדכונים מתחרויות ומאירועי קהילה.',
     facebookCta: 'לדף הפייסבוק שלנו',
+    facebookFollow: 'עקבו',
+    facebookLike: 'לייק',
+    facebookComment: 'תגובה',
+    facebookShare: 'שיתוף',
+    facebookPageSubtitle: 'קבוצת רובוטיקה · קריית אונו, ישראל',
   },
   about: {
     title: 'אודותינו',
