@@ -1,9 +1,8 @@
 import { useLanguage } from '../context/LanguageContext'
-import FacebookEmbed from '../components/FacebookEmbed'
-import { FACEBOOK_PAGE_URL } from '../data/site'
+import { FACEBOOK_PAGE_URL, teamPhotos, teamVideos } from '../data/site'
 
 export default function Home() {
-  const { t } = useLanguage()
+  const { t, lang } = useLanguage()
 
   return (
     <div>
@@ -37,45 +36,50 @@ export default function Home() {
         <h2 className="font-display mb-10 text-center text-2xl font-bold text-white sm:text-3xl">
           {t.home.gallery}
         </h2>
-        <div className="grid gap-6 lg:grid-cols-2">
-          <div>
-            <h3 className="font-display mb-4 text-lg font-bold text-krono-red-glow">{t.home.photos}</h3>
-            <div className="card-glow overflow-hidden rounded-xl">
-              <FacebookEmbed tabs="photos" height={420} title="Team Krono Facebook Photos" />
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {teamPhotos.map((photo, i) => (
+            <div
+              key={photo.src}
+              className={`card-glow overflow-hidden rounded-xl ${i === 0 ? 'sm:col-span-2 lg:col-span-1' : ''}`}
+            >
+              <img
+                src={photo.src}
+                alt={lang === 'he' ? photo.altHe : photo.alt}
+                className="aspect-video w-full object-cover"
+                loading="lazy"
+              />
             </div>
-          </div>
-          <div>
-            <h3 className="font-display mb-4 text-lg font-bold text-krono-red-glow">{t.home.videos}</h3>
-            <div className="card-glow overflow-hidden rounded-xl">
-              <FacebookEmbed tabs="videos" height={420} title="Team Krono Facebook Videos" />
-            </div>
-          </div>
+          ))}
         </div>
       </section>
 
       <section className="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
         <h2 className="font-display mb-8 text-center text-2xl font-bold text-white sm:text-3xl">
-          {t.home.facebookFeed}
+          {t.home.videos}
         </h2>
-        <div className="card-glow mx-auto max-w-2xl overflow-hidden rounded-xl bg-krono-card">
-          <FacebookEmbed
-            tabs="timeline"
-            height={600}
-            title="Team Krono Facebook"
-            hideCover={false}
-            showFacepile
-          />
-          <div className="border-t border-krono-red/20 p-4 text-center">
-            <a
-              href={FACEBOOK_PAGE_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary inline-block rounded-lg px-6 py-2.5 text-sm font-semibold text-white"
-            >
-              Facebook →
-            </a>
-          </div>
+        <div className="card-glow mx-auto max-w-3xl overflow-hidden rounded-xl">
+          {teamVideos.map((video) => (
+            <video
+              key={video.src}
+              src={video.src}
+              controls
+              playsInline
+              preload="metadata"
+              className="aspect-video w-full bg-black object-contain"
+              aria-label={lang === 'he' ? video.altHe : video.alt}
+            />
+          ))}
         </div>
+        <p className="mt-8 text-center">
+          <a
+            href={FACEBOOK_PAGE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary inline-block rounded-lg px-6 py-2.5 text-sm font-semibold text-white"
+          >
+            {t.home.facebookFeed} →
+          </a>
+        </p>
       </section>
     </div>
   )
