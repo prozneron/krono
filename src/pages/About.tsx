@@ -1,11 +1,6 @@
 import { useLanguage } from '../context/LanguageContext'
 import ContactForm from '../components/ContactForm'
-
-const storyImages = [
-  'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=500&h=350&fit=crop',
-  'https://images.unsplash.com/photo-1531482615713-2afd69097998?w=500&h=350&fit=crop',
-  'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=500&h=350&fit=crop',
-]
+import { FACEBOOK_PAGE_URL } from '../data/site'
 
 export default function About() {
   const { t } = useLanguage()
@@ -19,7 +14,7 @@ export default function About() {
         <div className="section-divider mx-auto mt-6 w-24" />
       </div>
 
-      <div className="grid items-center gap-12 lg:grid-cols-2">
+      <div className="grid items-start gap-12 lg:grid-cols-2">
         <div>
           <h2 className="font-display mb-6 text-2xl font-bold text-krono-red-glow">
             {t.about.ourStory}
@@ -30,20 +25,29 @@ export default function About() {
             <p>{t.about.storyP3}</p>
           </div>
         </div>
-        <div className="grid grid-cols-2 gap-3">
-          {storyImages.map((src, i) => (
-            <div
-              key={i}
-              className={`card-glow overflow-hidden rounded-xl ${i === 0 ? 'col-span-2' : ''}`}
-            >
-              <img
-                src={src}
-                alt=""
-                className={`w-full object-cover ${i === 0 ? 'h-48 sm:h-56' : 'h-36 sm:h-44'}`}
-                loading="lazy"
-              />
-            </div>
-          ))}
+        <div>
+          <h2 className="font-display mb-4 text-lg font-bold text-white">{t.about.teamPhotos}</h2>
+          <div className="card-glow overflow-hidden rounded-xl bg-krono-card">
+            <iframe
+              src={`https://www.facebook.com/plugins/page.php?href=${encodeURIComponent(FACEBOOK_PAGE_URL)}&tabs=photos&width=500&height=560&small_header=true&adapt_container_width=true&hide_cover=true&show_facepile=false&appId`}
+              width="100%"
+              height="560"
+              style={{ border: 'none', overflow: 'hidden' }}
+              scrolling="no"
+              frameBorder="0"
+              allowFullScreen
+              title="Team Krono Photos"
+              className="w-full"
+            />
+          </div>
+          <a
+            href={FACEBOOK_PAGE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-4 inline-block text-sm text-krono-red-glow hover:underline"
+          >
+            {t.about.viewAllPhotos} →
+          </a>
         </div>
       </div>
 
