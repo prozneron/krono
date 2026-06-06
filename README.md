@@ -30,9 +30,10 @@ The site deploys automatically on every push to `main` via GitHub Actions.
 
 1. Repo: [github.com/prozneron/krono](https://github.com/prozneron/krono)
 2. Go to **Settings → Pages → Build and deployment**
-3. Set **Source** to **Deploy from a branch**
-4. Choose branch **gh-pages**, folder **/ (root)**
-5. Save — your site will be live at [prozneron.github.io/krono](https://prozneron.github.io/krono)
+3. Set **Source** to **GitHub Actions** (not "Deploy from branch")
+4. Push to `main` — the workflow publishes the built site
+
+Live URL: [prozneron.github.io/krono](https://prozneron.github.io/krono)
 
 ## Contact Form
 
