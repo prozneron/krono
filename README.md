@@ -26,10 +26,13 @@ Open [http://localhost:5173/krono/](http://localhost:5173/krono/)
 
 ## Deploy to GitHub Pages
 
-1. Push this repo to `github.com/prozneron/krono`
+The site deploys automatically on every push to `main` via GitHub Actions.
+
+1. Repo: [github.com/prozneron/krono](https://github.com/prozneron/krono)
 2. Go to **Settings → Pages → Build and deployment**
-3. Set source to **GitHub Actions**
-4. Push to `main` — the workflow deploys automatically
+3. Set **Source** to **Deploy from a branch**
+4. Choose branch **gh-pages**, folder **/ (root)**
+5. Save — your site will be live at [prozneron.github.io/krono](https://prozneron.github.io/krono)
 
 ## Contact Form
 
