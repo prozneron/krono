@@ -1,4 +1,5 @@
 import { useLanguage } from '../context/LanguageContext'
+import FacebookEmbed from '../components/FacebookEmbed'
 import { FACEBOOK_PAGE_URL, teamPhotos, teamVideos } from '../data/site'
 
 export default function Home() {
@@ -53,7 +54,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
+      <section className="mx-auto max-w-7xl px-4 pb-12 sm:px-6 lg:px-8">
         <h2 className="font-display mb-8 text-center text-2xl font-bold text-white sm:text-3xl">
           {t.home.videos}
         </h2>
@@ -70,16 +71,31 @@ export default function Home() {
             />
           ))}
         </div>
-        <p className="mt-8 text-center">
-          <a
-            href={FACEBOOK_PAGE_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-primary inline-block rounded-lg px-6 py-2.5 text-sm font-semibold text-white"
-          >
-            {t.home.facebookFeed} →
-          </a>
-        </p>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
+        <h2 className="font-display mb-8 text-center text-2xl font-bold text-white sm:text-3xl">
+          {t.home.facebookFeed}
+        </h2>
+        <div className="card-glow mx-auto max-w-2xl overflow-hidden rounded-xl bg-krono-card">
+          <FacebookEmbed
+            tabs="timeline"
+            height={600}
+            title="Team Krono Facebook"
+            hideCover={false}
+            showFacepile
+          />
+          <div className="border-t border-krono-red/20 p-4 text-center">
+            <a
+              href={FACEBOOK_PAGE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary inline-block rounded-lg px-6 py-2.5 text-sm font-semibold text-white"
+            >
+              Facebook →
+            </a>
+          </div>
+        </div>
       </section>
     </div>
   )
