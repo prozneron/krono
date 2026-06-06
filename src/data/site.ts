@@ -65,18 +65,19 @@ export const FACEBOOK_PAGE_URL =
 export function facebookEmbed(
   tabs: string,
   height = 500,
-  options: { hideCover?: boolean; showFacepile?: boolean } = {},
+  options: { hideCover?: boolean; showFacepile?: boolean; smallHeader?: boolean } = {},
 ) {
-  const { hideCover = true, showFacepile = false } = options
+  const { hideCover = true, showFacepile = false, smallHeader = true } = options
   const params = new URLSearchParams({
     href: FACEBOOK_PAGE_URL,
     tabs,
     width: '500',
     height: String(height),
-    small_header: 'true',
+    small_header: String(smallHeader),
     adapt_container_width: 'true',
     hide_cover: String(hideCover),
     show_facepile: String(showFacepile),
+    locale: 'en_US',
   })
   return `https://www.facebook.com/plugins/page.php?${params}`
 }

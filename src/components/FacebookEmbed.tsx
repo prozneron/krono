@@ -8,6 +8,7 @@ interface FacebookEmbedProps {
   title: string
   hideCover?: boolean
   showFacepile?: boolean
+  smallHeader?: boolean
 }
 
 export default function FacebookEmbed({
@@ -16,18 +17,20 @@ export default function FacebookEmbed({
   title,
   hideCover = true,
   showFacepile = false,
+  smallHeader = true,
 }: FacebookEmbedProps) {
   return (
     <iframe
-      src={facebookEmbed(tabs, height, { hideCover, showFacepile })}
+      src={facebookEmbed(tabs, height, { hideCover, showFacepile, smallHeader })}
       width="100%"
       height={height}
-      style={{ border: 'none', overflow: 'hidden' }}
+      style={{ border: 'none', overflow: 'hidden', background: '#fff' }}
       scrolling="no"
       frameBorder="0"
       allowFullScreen
+      allow="encrypted-media"
       title={title}
-      className="w-full"
+      className="block w-full bg-white"
     />
   )
 }
