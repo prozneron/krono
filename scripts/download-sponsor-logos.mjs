@@ -8,6 +8,10 @@ async function save(url, name) {
   if (!res.ok) throw new Error(`${res.status}`)
   const buf = Buffer.from(await res.arrayBuffer())
   if (buf.length < 300) throw new Error(`small ${buf.length}`)
+  const isPng = buf[0] === 0x89 && buf[1] === 0x50
+  const isSvg = buf.slice(0, 4).toString().includes('svg') || buf.slice(0, 5).toString().includes('<?xml')
+  if (url.includes('.png') && !isPng) throw new Error('not a png')
+  if (url.includes('.svg') && !isSvg) throw new Error('not a svg')
   const ext = url.match(/\.(svg|png|jpe?g|webp)/i)?.[1]?.toLowerCase() ?? 'png'
   writeFileSync(join('public/sponsors', `${name}.${ext}`), buf)
   console.log('OK', name, buf.length)

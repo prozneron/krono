@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { useLanguage } from '../context/LanguageContext'
 import { sponsors } from '../data/site'
 
@@ -10,22 +11,25 @@ function SponsorInitials({ name }: { name: string }) {
     .toUpperCase()
 
   return (
-    <div className="flex h-24 w-full items-center justify-center rounded-lg bg-krono-red/10">
+    <div className="flex h-28 w-full items-center justify-center rounded-lg bg-krono-red/10">
       <span className="font-display text-2xl font-bold text-krono-red-glow">{initials}</span>
     </div>
   )
 }
 
 function SponsorLogo({ name, logo }: { name: string; logo?: string }) {
-  if (!logo) return <SponsorInitials name={name} />
+  const [failed, setFailed] = useState(false)
+
+  if (!logo || failed) return <SponsorInitials name={name} />
 
   return (
-    <div className="flex h-24 w-full items-center justify-center rounded-lg bg-white p-4">
+    <div className="flex h-28 w-full items-center justify-center rounded-lg bg-white p-3">
       <img
         src={logo}
         alt={name}
-        className="max-h-16 max-w-full object-contain"
+        className="max-h-20 w-full object-contain"
         loading="lazy"
+        onError={() => setFailed(true)}
       />
     </div>
   )
