@@ -23,6 +23,8 @@ export interface Translations {
     photos: string
     videos: string
     facebookFeed: string
+    facebookPreview: string
+    facebookCta: string
   }
   about: {
     title: string
@@ -103,6 +105,8 @@ export const en: Translations = {
     photos: 'Photos',
     videos: 'Videos',
     facebookFeed: 'Latest from Facebook',
+    facebookPreview: 'Photos, videos, and updates from competitions and outreach events.',
+    facebookCta: 'Open Facebook Page',
   },
   about: {
     title: 'About Us',
@@ -192,6 +196,8 @@ export const he: Translations = {
     photos: 'תמונות',
     videos: 'סרטונים',
     facebookFeed: 'עדכונים מפייסבוק',
+    facebookPreview: 'תמונות, סרטונים ועדכונים מתחרויות ומאירועי קהילה.',
+    facebookCta: 'לדף הפייסבוק שלנו',
   },
   about: {
     title: 'אודותינו',

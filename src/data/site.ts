@@ -77,7 +77,6 @@ export function facebookEmbed(
     adapt_container_width: 'true',
     hide_cover: String(hideCover),
     show_facepile: String(showFacepile),
-    appId: '',
   })
   return `https://www.facebook.com/plugins/page.php?${params}`
 }

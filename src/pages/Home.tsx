@@ -1,6 +1,6 @@
 import { useLanguage } from '../context/LanguageContext'
-import FacebookEmbed from '../components/FacebookEmbed'
-import { FACEBOOK_PAGE_URL, teamPhotos, teamVideos } from '../data/site'
+import FacebookFeed from '../components/FacebookFeed'
+import { teamPhotos, teamVideos } from '../data/site'
 
 export default function Home() {
   const { t, lang } = useLanguage()
@@ -77,24 +77,8 @@ export default function Home() {
         <h2 className="font-display mb-8 text-center text-2xl font-bold text-white sm:text-3xl">
           {t.home.facebookFeed}
         </h2>
-        <div className="card-glow mx-auto max-w-2xl overflow-hidden rounded-xl bg-krono-card">
-          <FacebookEmbed
-            tabs="timeline"
-            height={600}
-            title="Team Krono Facebook"
-            hideCover={false}
-            showFacepile
-          />
-          <div className="border-t border-krono-red/20 p-4 text-center">
-            <a
-              href={FACEBOOK_PAGE_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary inline-block rounded-lg px-6 py-2.5 text-sm font-semibold text-white"
-            >
-              Facebook →
-            </a>
-          </div>
+        <div className="card-glow mx-auto max-w-2xl">
+          <FacebookFeed />
         </div>
       </section>
     </div>
