@@ -1,9 +1,9 @@
 import { useLanguage } from '../context/LanguageContext'
 import ContactForm from '../components/ContactForm'
-import { teamPhotos } from '../data/site'
+import TeamPhotoGrid from '../components/TeamPhotoGrid'
 
 export default function About() {
-  const { t, lang } = useLanguage()
+  const { t } = useLanguage()
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
@@ -25,24 +25,7 @@ export default function About() {
             <p>{t.about.storyP3}</p>
           </div>
         </div>
-        <div>
-          <h2 className="font-display mb-4 text-lg font-bold text-white">{t.about.teamPhotos}</h2>
-          <div className="grid grid-cols-2 gap-3">
-            {teamPhotos.map((photo, i) => (
-              <div
-                key={photo.src}
-                className={`card-glow overflow-hidden rounded-xl ${i === 0 ? 'col-span-2' : ''}`}
-              >
-                <img
-                  src={photo.src}
-                  alt={lang === 'he' ? photo.altHe : photo.alt}
-                  className={`w-full object-cover ${i === 0 ? 'h-48 sm:h-56' : 'h-36 sm:h-44'}`}
-                  loading="lazy"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
+        <TeamPhotoGrid />
       </div>
 
       <div className="section-divider my-16" />

@@ -29,6 +29,7 @@ export interface Translations {
     storyP2: string
     storyP3: string
     teamPhotos: string
+    photoMissing: string
     contact: string
     name: string
     email: string
@@ -108,6 +109,7 @@ export const en: Translations = {
     storyP3:
       'What started as a rookie team quickly became a force to be reckoned with. Our dedication, creativity, and relentless drive earned us the title of #1 Rookie Team in the World for 2025 — but for us, that\'s just the beginning.',
     teamPhotos: 'The Team',
+    photoMissing: 'Add team photo to public/team/',
     contact: 'Contact Us',
     name: 'Name',
     email: 'Email',
@@ -193,6 +195,7 @@ export const he: Translations = {
     storyP3:
       'מה שהתחיל כקבוצת Rookie הפך במהירות לכוח שאי אפשר להתעלם ממנו. המסירות, היצירתיות והנחישות שלנו זיכו אותנו בתואר קבוצת Rookie מס\' 1 בעולם לשנת 2025 — אבל بالنسبה לנו, זו רק ההתחלה.',
     teamPhotos: 'הקבוצה',
+    photoMissing: 'הוסיפו תמונת קבוצה ל-public/team/',
     contact: 'צור קשר',
     name: 'שם',
     email: 'אימייל',
