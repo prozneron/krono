@@ -1,28 +1,6 @@
 import { useLanguage } from '../context/LanguageContext'
+import FacebookEmbed from '../components/FacebookEmbed'
 import { FACEBOOK_PAGE_URL } from '../data/site'
-
-const galleryItems = [
-  {
-    type: 'image' as const,
-    src: `${import.meta.env.BASE_URL}logo.png`,
-    alt: 'Team Krono Logo',
-  },
-  {
-    type: 'video' as const,
-    src: 'https://www.youtube.com/embed/_fybREErgyM',
-    alt: 'FRC 2026 REBUILT Game Animation',
-  },
-  {
-    type: 'image' as const,
-    src: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=400&fit=crop',
-    alt: 'Robotics team at work',
-  },
-  {
-    type: 'image' as const,
-    src: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&h=400&fit=crop',
-    alt: 'Technology and innovation',
-  },
-]
 
 export default function Home() {
   const { t } = useLanguage()
@@ -59,32 +37,19 @@ export default function Home() {
         <h2 className="font-display mb-10 text-center text-2xl font-bold text-white sm:text-3xl">
           {t.home.gallery}
         </h2>
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {galleryItems.map((item, i) => (
-            <div
-              key={i}
-              className="card-glow group overflow-hidden rounded-xl bg-krono-card transition-transform hover:scale-[1.02]"
-            >
-              {item.type === 'video' ? (
-                <div className="aspect-video">
-                  <iframe
-                    src={item.src}
-                    title={item.alt}
-                    className="h-full w-full"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  />
-                </div>
-              ) : (
-                <img
-                  src={item.src}
-                  alt={item.alt}
-                  className="aspect-video w-full object-cover transition-transform group-hover:scale-105"
-                  loading="lazy"
-                />
-              )}
+        <div className="grid gap-6 lg:grid-cols-2">
+          <div>
+            <h3 className="font-display mb-4 text-lg font-bold text-krono-red-glow">{t.home.photos}</h3>
+            <div className="card-glow overflow-hidden rounded-xl">
+              <FacebookEmbed tabs="photos" height={420} title="Team Krono Facebook Photos" />
             </div>
-          ))}
+          </div>
+          <div>
+            <h3 className="font-display mb-4 text-lg font-bold text-krono-red-glow">{t.home.videos}</h3>
+            <div className="card-glow overflow-hidden rounded-xl">
+              <FacebookEmbed tabs="videos" height={420} title="Team Krono Facebook Videos" />
+            </div>
+          </div>
         </div>
       </section>
 
@@ -93,16 +58,12 @@ export default function Home() {
           {t.home.facebookFeed}
         </h2>
         <div className="card-glow mx-auto max-w-2xl overflow-hidden rounded-xl bg-krono-card">
-          <iframe
-            src={`https://www.facebook.com/plugins/page.php?href=${encodeURIComponent(FACEBOOK_PAGE_URL)}&tabs=timeline&width=500&height=600&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId`}
-            width="100%"
-            height="600"
-            style={{ border: 'none', overflow: 'hidden' }}
-            scrolling="no"
-            frameBorder="0"
-            allowFullScreen
+          <FacebookEmbed
+            tabs="timeline"
+            height={600}
             title="Team Krono Facebook"
-            className="w-full"
+            hideCover={false}
+            showFacepile
           />
           <div className="border-t border-krono-red/20 p-4 text-center">
             <a

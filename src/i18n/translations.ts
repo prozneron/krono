@@ -20,6 +20,8 @@ export interface Translations {
     description: string
     badge: string
     gallery: string
+    photos: string
+    videos: string
     facebookFeed: string
   }
   about: {
@@ -29,8 +31,8 @@ export interface Translations {
     storyP2: string
     storyP3: string
     teamPhotos: string
+    videos: string
     viewOnFacebook: string
-    photoMissing: string
     contact: string
     name: string
     email: string
@@ -98,6 +100,8 @@ export const en: Translations = {
       'An amazing team from Kiryat Ono competing in the FIRST Robotics Competition — crowned the #1 Rookie Team in the World for 2025.',
     badge: '#1 Rookie Team — World 2025',
     gallery: 'Team Highlights',
+    photos: 'Photos',
+    videos: 'Videos',
     facebookFeed: 'Latest from Facebook',
   },
   about: {
@@ -109,9 +113,9 @@ export const en: Translations = {
       'Malls, schools, community events, and local tech fairs became our stage. We brought our robot, our passion, and our story to anyone who would listen — inspiring the next generation of engineers, programmers, and innovators in Kiryat Ono and beyond.',
     storyP3:
       'What started as a rookie team quickly became a force to be reckoned with. Our dedication, creativity, and relentless drive earned us the title of #1 Rookie Team in the World for 2025 — but for us, that\'s just the beginning.',
-    teamPhotos: 'The Team',
+    teamPhotos: 'Photos',
+    videos: 'Videos',
     viewOnFacebook: 'See more on Facebook',
-    photoMissing: 'Photo unavailable',
     contact: 'Contact Us',
     name: 'Name',
     email: 'Email',
@@ -185,6 +189,8 @@ export const he: Translations = {
       'קבוצה מדהימה מקריית אונו המתחרה בתחרות FIRST Robotics — זכתה בתואר קבוצת Rookie מס\' 1 בעולם לשנת 2025.',
     badge: 'קבוצת Rookie מס\' 1 — עולם 2025',
     gallery: 'רגעים מהקבוצה',
+    photos: 'תמונות',
+    videos: 'סרטונים',
     facebookFeed: 'עדכונים מפייסבוק',
   },
   about: {
@@ -196,9 +202,9 @@ export const he: Translations = {
       'קניונים, בתי ספר, אירועי קהילה וירידי טכנולוגיה הפכו לבמה שלנו. הבאנו את הרובוט, התשוקה והסיפור שלנו לכל מי שרצה לשמוע — והשראנו את דור המהנדסים, המתכנתים והחדשנים הבאים בקריית אונו ומעבר לה.',
     storyP3:
       'מה שהתחיל כקבוצת Rookie הפך במהירות לכוח שאי אפשר להתעלם ממנו. המסירות, היצירתיות והנחישות שלנו זיכו אותנו בתואר קבוצת Rookie מס\' 1 בעולם לשנת 2025 — אבל بالنسبה לנו, זו רק ההתחלה.',
-    teamPhotos: 'הקבוצה',
+    teamPhotos: 'תמונות',
+    videos: 'סרטונים',
     viewOnFacebook: 'עוד תמונות בפייסבוק',
-    photoMissing: 'תמונה לא זמינה',
     contact: 'צור קשר',
     name: 'שם',
     email: 'אימייל',
