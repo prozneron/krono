@@ -10,8 +10,23 @@ function SponsorInitials({ name }: { name: string }) {
     .toUpperCase()
 
   return (
-    <div className="flex h-20 w-full items-center justify-center rounded-lg bg-krono-red/10">
+    <div className="flex h-24 w-full items-center justify-center rounded-lg bg-krono-red/10">
       <span className="font-display text-2xl font-bold text-krono-red-glow">{initials}</span>
+    </div>
+  )
+}
+
+function SponsorLogo({ name, logo }: { name: string; logo?: string }) {
+  if (!logo) return <SponsorInitials name={name} />
+
+  return (
+    <div className="flex h-24 w-full items-center justify-center rounded-lg bg-white/5 p-4">
+      <img
+        src={logo}
+        alt={name}
+        className="max-h-16 max-w-full object-contain"
+        loading="lazy"
+      />
     </div>
   )
 }
@@ -40,7 +55,7 @@ export default function Sponsors() {
               rel="noopener noreferrer"
               className="card-glow group flex flex-col rounded-xl bg-krono-card p-6 transition-transform hover:scale-[1.02]"
             >
-              <SponsorInitials name={displayName} />
+              <SponsorLogo name={displayName} logo={sponsor.logo} />
               <h3 className="mt-4 text-center font-semibold text-white group-hover:text-krono-red-glow">
                 {displayName}
               </h3>
