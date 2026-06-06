@@ -100,11 +100,6 @@ export const teamPhotos: TeamMedia[] = [
     altHe: 'קבוצת Krono באירוע',
   },
   {
-    src: `${import.meta.env.BASE_URL}team/photo-2.jpg`,
-    alt: 'Team Krono FRC 10935',
-    altHe: 'Krono FRC 10935',
-  },
-  {
     src: `${import.meta.env.BASE_URL}team/photo-3.jpg`,
     alt: 'Team Krono robotics',
     altHe: 'רובוטיקה Krono',
