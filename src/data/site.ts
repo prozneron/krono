@@ -9,7 +9,7 @@ export const sponsors: Sponsor[] = [
   {
     name: 'Apple',
     link: 'https://www.apple.com',
-    logo: `${import.meta.env.BASE_URL}sponsors/apple.svg`,
+    logo: `${import.meta.env.BASE_URL}sponsors/apple.png`,
   },
   {
     name: 'Etro',
